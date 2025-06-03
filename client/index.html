@@ -1,59 +1,57 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Лендинг</title>
+    <title>20% Stable Income Investment</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Добро пожаловать на лендинг</h1>
-            <p>Простая демонстрация функциональности</p>
+            <h1>20% stable income per<br>year in USDT</h1>
+            <p class="subtitle">Passive. Simple.</p>
         </header>
 
-        <section class="main-content">
-            <button id="openFormBtn">Открыть форму</button>
+        <section class="features">
+            <div class="feature-item">
+                <div class="icon"><i class="fas fa-check-circle"></i></div>
+                <p>We already invest and deliver results. Now you can join — without managing trades or taking unnecessary risks. Everything works through a clear and intuitive mini-app.</p>
+            </div>
+            
+            <div class="feature-item">
+                <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                <p>Your funds are protected by a smart contract and backed by a reserve fund.</p>
+            </div>
         </section>
 
-        <!-- Модальное окно -->
-        <div id="formModal" class="modal">
-            <div class="modal-content">
-                <span class="close">&times;</span>
-                <h2>Обратная связь</h2>
-                <form id="contactForm">
-                    <div class="form-group">
-                        <label for="email">Email:</label>
-                        <input type="email" id="email" name="email" required>
-                    </div>
+        <section class="special-offer">
+            <div class="offer-icon"><i class="fas fa-gift"></i></div>
+            <h2>Special offer</h2>
+            <p>
+                The first <span class="highlight">100 people</span> who complete this form and join the waitlist will receive a <span class="highlight">23% annual return</span> instead of 20%. Partners <span class="highlight">get 5% of the investor's profit they refer</span>.
+            </p>
+            <button class="cta-button">Get Access</button>
+        </section>
 
-                    <h3>Выберите интересующие темы:</h3>
-                    <div class="checkbox-group">
-                        <div>
-                            <input type="checkbox" id="option1" name="interests" value="option1">
-                            <label for="option1">Вариант 1</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="option2" name="interests" value="option2">
-                            <label for="option2">Вариант 2</label>
-                        </div>
-                        <div>
-                            <input type="checkbox" id="option3" name="interests" value="option3">
-                            <label for="option3">Вариант 3</label>
-                        </div>
-                    </div>
+        <section class="what-we-offer">
+            <div class="section-icon"><i class="fas fa-gem"></i></div>
+            <h2>What we offer</h2>
+            <ul>
+                <li>Proven investment mechanism</li>
+                <li>Fixed annual return of 20% in USDT</li>
+            </ul>
+        </section>
 
-                    <div class="form-group">
-                        <label for="message">Сообщение:</label>
-                        <textarea id="message" name="message" rows="4"></textarea>
-                    </div>
-
-                    <button type="submit">Отправить</button>
-                </form>
-            </div>
-        </div>
+        <section class="income-sources">
+            <h2>Income sources</h2>
+            <ul>
+                <li>Stocks and bonds of global corporations and government-backed entities</li>
+                <li>Bank-guaranteed deposits across various countries</li>
+                <li>Crypto assets (max 10% of portfolio)</li>
+            </ul>
+        </section>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>
