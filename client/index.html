@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Лендинг</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Добро пожаловать на лендинг</h1>
+            <p>Простая демонстрация функциональности</p>
+        </header>
+
+        <section class="main-content">
+            <button id="openFormBtn">Открыть форму</button>
+        </section>
+
+        <!-- Модальное окно -->
+        <div id="formModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2>Обратная связь</h2>
+                <form id="contactForm">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required>
+                    </div>
+
+                    <h3>Выберите интересующие темы:</h3>
+                    <div class="checkbox-group">
+                        <div>
+                            <input type="checkbox" id="option1" name="interests" value="option1">
+                            <label for="option1">Вариант 1</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="option2" name="interests" value="option2">
+                            <label for="option2">Вариант 2</label>
+                        </div>
+                        <div>
+                            <input type="checkbox" id="option3" name="interests" value="option3">
+                            <label for="option3">Вариант 3</label>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Сообщение:</label>
+                        <textarea id="message" name="message" rows="4"></textarea>
+                    </div>
+
+                    <button type="submit">Отправить</button>
+                </form>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
