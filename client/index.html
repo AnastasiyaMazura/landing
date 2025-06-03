@@ -32,7 +32,7 @@
             <p>
                 The first <span class="highlight">100 people</span> who complete this form and join the waitlist will receive a <span class="highlight">23% annual return</span> instead of 20%. Partners <span class="highlight">get 5% of the investor's profit they refer</span>.
             </p>
-            <button class="cta-button">Get Access</button>
+            <button id="getAccessBtn" class="cta-button">Get Access</button>
         </section>
 
         <section class="what-we-offer">
@@ -53,5 +53,122 @@
             </ul>
         </section>
     </div>
+
+    <!-- Модальное окно для waitlist -->
+    <div id="waitlistModal" class="modal">
+        <div class="modal-content">
+            <span class="close-modal">&times;</span>
+            <h2 class="modal-title">Get on the waitlist</h2>
+            <p class="modal-subtitle">Rewards are waiting for you!</p>
+
+            <form id="waitlistForm">
+                <div class="form-group">
+                    <label for="email">Write your email*</label>
+                    <input type="email" id="email" placeholder="example@email.com" required>
+                </div>
+
+                <div class="questions">
+                    <div class="question-header">
+                        <div class="checklist-icon"><i class="fas fa-clipboard-list"></i></div>
+                        <p>Just a few quick questions:</p>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">1</div>
+                        <p>Are you interested in this proposal?</p>
+                        <div class="options">
+                            <button type="button" class="option-btn">Yes</button>
+                            <button type="button" class="option-btn">No</button>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">2</div>
+                        <p>Have you ever received passive income?</p>
+                        <div class="options">
+                            <button type="button" class="option-btn">Dividends</button>
+                            <button type="button" class="option-btn">Staking</button>
+                            <button type="button" class="option-btn">Rental income</button>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">3</div>
+                        <p>Do you have accounts on crypto exchanges or stock markets?</p>
+                        <div class="options">
+                            <button type="button" class="option-btn">Yes</button>
+                            <button type="button" class="option-btn">No</button>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">4</div>
+                        <p>What amount are you prepared to invest?</p>
+                        <div class="options">
+                            <button type="button" class="option-btn">Up to $1K</button>
+                            <button type="button" class="option-btn">$1K-$5K</button>
+                            <button type="button" class="option-btn">$5K-$10K</button>
+                            <button type="button" class="option-btn">Over $10K</button>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">5</div>
+                        <p>How often do you invest?</p>
+                        <div class="options">
+                            <button type="button" class="option-btn">Regularly</button>
+                            <button type="button" class="option-btn">Occasionally</button>
+                            <button type="button" class="option-btn">Never</button>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">6</div>
+                        <p>Which features are the highest priority for you in an investing product?</p>
+                        <div class="options">
+                            <button type="button" class="option-btn">Security</button>
+                            <button type="button" class="option-btn">Ease of Use</button>
+                            <button type="button" class="option-btn">Smart Contract</button>
+                            <button type="button" class="option-btn">Return Rate (20%)</button>
+                            <button type="button" class="option-btn">Automated Tax Handling</button>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">7</div>
+                        <p>Which type of crypto wallet do you currently use?</p>
+                        <div class="options">
+                            <button type="button" class="option-btn">MetaMask</button>
+                            <button type="button" class="option-btn">Tonkeeper</button>
+                            <button type="button" class="option-btn">Trust Wallet</button>
+                            <button type="button" class="option-btn">Centralized Exchange Wallet</button>
+                            <button type="button" class="option-btn">Cold Wallet</button>
+                            <button type="button" class="option-btn">None</button>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">8</div>
+                        <p>Would you like to:</p>
+                        <div class="options">
+                            <button type="button" class="option-btn">Join the project waitlist</button>
+                            <button type="button" class="option-btn">Become an early ambassador</button>
+                            <button type="button" class="option-btn">Just follow the updates for now</button>
+                        </div>
+                    </div>
+
+                    <div class="question">
+                        <div class="question-number">9</div>
+                        <p>What's your opinion on this product?</p>
+                        <textarea placeholder="Feel free to share your thoughts."></textarea>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Invite me</button>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>

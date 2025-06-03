@@ -1,57 +1,54 @@
-document.addEventListener('DOMContentLoaded', () => {
-    const modal = document.getElementById('formModal');
-    const btn = document.getElementById('openFormBtn');
-    const closeBtn = document.querySelector('.close');
-    const form = document.getElementById('contactForm');
-
-    // Открытие модального окна
-    btn.onclick = function() {
-        modal.style.display = "block";
-    }
-
-    // Закрытие модального окна при клике на X
-    closeBtn.onclick = function() {
-        modal.style.display = "none";
-    }
-
-    // Закрытие модального окна при клике вне его
-    window.onclick = function(event) {
+document.addEventListener('DOMContentLoaded', function() {
+    const getAccessBtn = document.getElementById('getAccessBtn');
+    const modal = document.getElementById('waitlistModal');
+    const closeModalBtn = document.querySelector('.close-modal');
+    
+    // Открытие модального окна при клике на кнопку "Get Access"
+    getAccessBtn.addEventListener('click', function() {
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden'; // Предотвращение прокрутки основной страницы
+    });
+    
+    // Закрытие модального окна при клике на кнопку X
+    closeModalBtn.addEventListener('click', function() {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto'; // Возвращение прокрутки основной страницы
+    });
+    
+    // Закрытие модального окна при клике вне его содержимого
+    window.addEventListener('click', function(event) {
         if (event.target == modal) {
-            modal.style.display = "none";
+            modal.style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
-    }
-
-    // Обработка отправки формы
-    form.addEventListener('submit', async (e) => {
-        e.preventDefault();
-        
-        // Получаем данные формы
-        const email = document.getElementById('email').value;
-        const message = document.getElementById('message').value;
-        const checkedBoxes = document.querySelectorAll('input[name="interests"]:checked');
-        const interests = Array.from(checkedBoxes).map(box => box.value);
-
-        try {
-            const response = await fetch('/api/submit-form', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify({ email, message, interests })
-            });
-
-            const data = await response.json();
+    });
+    
+    // Переключение выбранных вариантов ответов
+    const optionButtons = document.querySelectorAll('.option-btn');
+    optionButtons.forEach(button => {
+        button.addEventListener('click', function() {
+            // Находим все кнопки в текущей группе вопросов
+            const parentQuestion = this.closest('.question');
+            const siblings = parentQuestion.querySelectorAll('.option-btn');
             
-            if (data.success) {
-                alert('Форма успешно отправлена!');
-                form.reset();
-                modal.style.display = "none";
+            // Если это вопрос 6, разрешаем множественный выбор
+            if (parentQuestion.querySelector('.question-number').textContent === '6') {
+                this.classList.toggle('selected');
             } else {
-                alert('Произошла ошибка при отправке формы');
+                // Для остальных вопросов - только один ответ
+                siblings.forEach(btn => btn.classList.remove('selected'));
+                this.classList.add('selected');
             }
-        } catch (error) {
-            console.error('Ошибка:', error);
-            alert('Ошибка соединения с сервером');
-        }
+        });
+    });
+    
+    // Обработка отправки формы
+    const form = document.getElementById('waitlistForm');
+    form.addEventListener('submit', function(e) {
+        e.preventDefault();
+        // Здесь будет логика отправки данных формы
+        alert('Thank you for joining the waitlist!');
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
     });
 });
