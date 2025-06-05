@@ -5,39 +5,45 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>20% Stable Income Investment</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>20% stable income per<br>year in USDT</h1>
+            <h1>20% stable income per<br> year in USDT</h1>
             <p class="subtitle">Passive. Simple.</p>
         </header>
 
         <section class="features">
             <div class="feature-item">
-                <div class="icon"><i class="fas fa-check-circle"></i></div>
+                <img class="icon-image" src="assets/icons/activity.svg" alt="Activity icon">
                 <p>We already invest and deliver results. Now you can join — without managing trades or taking unnecessary risks. Everything works through a clear and intuitive mini-app.</p>
             </div>
             
             <div class="feature-item">
-                <div class="icon"><i class="fas fa-shield-alt"></i></div>
+                <img class="icon-image" src="assets/icons/sheild.svg" alt="Sheild icon">
                 <p>Your funds are protected by a smart contract and backed by a reserve fund.</p>
             </div>
         </section>
 
         <section class="special-offer">
-            <div class="offer-icon"><i class="fas fa-gift"></i></div>
-            <h2>Special offer</h2>
-            <p>
+            <div class="offer-title">
+                <img class="icon-image" src="assets/icons/volume.svg" alt="Volume icon">
+                <h2>Special offer</h2>
+            </div>
+            <p class="offer-text">
                 The first <span class="highlight">100 people</span> who complete this form and join the waitlist will receive a <span class="highlight">23% annual return</span> instead of 20%. Partners <span class="highlight">get 5% of the investor's profit they refer</span>.
             </p>
             <button id="getAccessBtn" class="cta-button">Get Access</button>
         </section>
 
         <section class="what-we-offer">
-            <div class="section-icon"><i class="fas fa-gem"></i></div>
-            <h2>What we offer</h2>
+            <div class="offer-title">
+                <img class="icon-image" src="assets/icons/tick.svg" alt="Tick icon">
+                <h2>What we offer</h2>
+            </div>
             <ul>
                 <li>Proven investment mechanism</li>
                 <li>Fixed annual return of 20% in USDT</li>
@@ -54,120 +60,146 @@
         </section>
     </div>
 
-    <!-- Модальное окно для waitlist -->
+    <!-- Modal window for waitlist -->
     <div id="waitlistModal" class="modal">
         <div class="modal-content">
-            <span class="close-modal">&times;</span>
-            <h2 class="modal-title">Get on the waitlist</h2>
-            <p class="modal-subtitle">Rewards are waiting for you!</p>
+            <div class="modal-header">
+                <h2 class="modal-title">Get on the waitlist</h2>
+                <img class="close-modal" src="assets/icons/close.svg" alt="Clipboard icon">
+            </div>
+            
+            <div class="modal-body">
+                <p class="modal-subtitle">Rewards are waiting for you!</p>
 
-            <form id="waitlistForm">
-                <div class="form-group">
-                    <label for="email">Write your email*</label>
-                    <input type="email" id="email" placeholder="example@email.com" required>
-                </div>
-
-                <div class="questions">
-                    <div class="question-header">
-                        <div class="checklist-icon"><i class="fas fa-clipboard-list"></i></div>
-                        <p>Just a few quick questions:</p>
+                <form id="waitlistForm" class="waitlist-form">
+                    <div class="form-group">
+                        <label for="email">Write your email*</label>
+                        <input type="email" id="email" placeholder="example@email.com" required>
                     </div>
 
-                    <div class="question">
-                        <div class="question-number">1</div>
-                        <p>Are you interested in this proposal?</p>
-                        <div class="options">
-                            <button type="button" class="option-btn">Yes</button>
-                            <button type="button" class="option-btn">No</button>
+                    <div class="questions">
+                        <div class="question-header">
+                            <img class="icon-image" src="assets/icons/clipboard.svg" alt="Clipboard icon">
+                            <p>Just a few quick questions:</p>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-container">
+                                <div class="question-number">1</div>
+                                <p>Are you interested in this proposal?</p>
+                            </div>
+                            <div class="options">
+                                <button type="button" class="option-btn">Yes</button>
+                                <button type="button" class="option-btn">No</button>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-container">
+                                <div class="question-number">2</div>
+                                <p>Have you ever received passive income?</p>
+                            </div>
+                            <div class="options">
+                                <button type="button" class="option-btn">Dividends</button>
+                                <button type="button" class="option-btn">Staking</button>
+                                <button type="button" class="option-btn">Rental income</button>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-container">
+                                <div class="question-number">3</div>
+                                <p>Do you have accounts on crypto exchanges or stock markets?</p>
+                            </div>
+                            <div class="options">
+                                <button type="button" class="option-btn">Yes</button>
+                                <button type="button" class="option-btn">No</button>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-container">
+                                <div class="question-number">4</div>
+                                <p>What amount are you prepared to invest?</p>
+                            </div>
+                            <div class="options">
+                                <button type="button" class="option-btn">Up to $1K</button>
+                                <button type="button" class="option-btn">$1K-$5K</button>
+                                <button type="button" class="option-btn">$5K-$10K</button>
+                                <button type="button" class="option-btn">Over $10K</button>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-container">
+                                <div class="question-number">5</div>
+                                <p>How often do you invest?</p>
+                            </div>
+                            <div class="options">
+                                <button type="button" class="option-btn">Regularly</button>
+                                <button type="button" class="option-btn">Occasionally</button>
+                                <button type="button" class="option-btn">Never</button>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-container">
+                                <div class="question-number">6</div>
+                                <p>Which features are the highest priority for you in an investing product?</p>
+                            </div>
+                            <div class="options">
+                                <button type="button" class="option-btn">Security</button>
+                                <button type="button" class="option-btn">Ease of Use</button>
+                                <button type="button" class="option-btn">Smart Contract</button>
+                                <button type="button" class="option-btn">Return Rate (20%)</button>
+                                <button type="button" class="option-btn">Automated Tax Handling</button>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-container">
+                                <div class="question-number">7</div>
+                                <p>Which type of crypto wallet do you currently use?</p>
+                            </div>
+                            <div class="options">
+                                <button type="button" class="option-btn">MetaMask</button>
+                                <button type="button" class="option-btn">Tonkeeper</button>
+                                <button type="button" class="option-btn">Trust Wallet</button>
+                                <button type="button" class="option-btn">Centralized Exchange Wallet</button>
+                                <button type="button" class="option-btn">Cold Wallet</button>
+                                <button type="button" class="option-btn">None</button>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-container">
+                                <div class="question-number">8</div>
+                                <p>Would you like to:</p>
+                            </div>
+                            <div class="options">
+                                <button type="button" class="option-btn">Join the project waitlist</button>
+                                <button type="button" class="option-btn">Become an early ambassador</button>
+                                <button type="button" class="option-btn">Just follow the updates for now</button>
+                            </div>
+                        </div>
+
+                        <div class="question">
+                            <div class="question-container">
+                                <div class="question-number">9</div>
+                                <p>What's your opinion on this product?</p>
+                            </div>
+                            <textarea placeholder="Feel free to share your thoughts."></textarea>
                         </div>
                     </div>
 
-                    <div class="question">
-                        <div class="question-number">2</div>
-                        <p>Have you ever received passive income?</p>
-                        <div class="options">
-                            <button type="button" class="option-btn">Dividends</button>
-                            <button type="button" class="option-btn">Staking</button>
-                            <button type="button" class="option-btn">Rental income</button>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <div class="question-number">3</div>
-                        <p>Do you have accounts on crypto exchanges or stock markets?</p>
-                        <div class="options">
-                            <button type="button" class="option-btn">Yes</button>
-                            <button type="button" class="option-btn">No</button>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <div class="question-number">4</div>
-                        <p>What amount are you prepared to invest?</p>
-                        <div class="options">
-                            <button type="button" class="option-btn">Up to $1K</button>
-                            <button type="button" class="option-btn">$1K-$5K</button>
-                            <button type="button" class="option-btn">$5K-$10K</button>
-                            <button type="button" class="option-btn">Over $10K</button>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <div class="question-number">5</div>
-                        <p>How often do you invest?</p>
-                        <div class="options">
-                            <button type="button" class="option-btn">Regularly</button>
-                            <button type="button" class="option-btn">Occasionally</button>
-                            <button type="button" class="option-btn">Never</button>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <div class="question-number">6</div>
-                        <p>Which features are the highest priority for you in an investing product?</p>
-                        <div class="options">
-                            <button type="button" class="option-btn">Security</button>
-                            <button type="button" class="option-btn">Ease of Use</button>
-                            <button type="button" class="option-btn">Smart Contract</button>
-                            <button type="button" class="option-btn">Return Rate (20%)</button>
-                            <button type="button" class="option-btn">Automated Tax Handling</button>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <div class="question-number">7</div>
-                        <p>Which type of crypto wallet do you currently use?</p>
-                        <div class="options">
-                            <button type="button" class="option-btn">MetaMask</button>
-                            <button type="button" class="option-btn">Tonkeeper</button>
-                            <button type="button" class="option-btn">Trust Wallet</button>
-                            <button type="button" class="option-btn">Centralized Exchange Wallet</button>
-                            <button type="button" class="option-btn">Cold Wallet</button>
-                            <button type="button" class="option-btn">None</button>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <div class="question-number">8</div>
-                        <p>Would you like to:</p>
-                        <div class="options">
-                            <button type="button" class="option-btn">Join the project waitlist</button>
-                            <button type="button" class="option-btn">Become an early ambassador</button>
-                            <button type="button" class="option-btn">Just follow the updates for now</button>
-                        </div>
-                    </div>
-
-                    <div class="question">
-                        <div class="question-number">9</div>
-                        <p>What's your opinion on this product?</p>
-                        <textarea placeholder="Feel free to share your thoughts."></textarea>
-                    </div>
-                </div>
-
-                <button type="submit" class="submit-btn">Invite me</button>
-            </form>
+                    <button type="submit" class="submit-btn">Invite me</button>
+                </form>
+            </div>
         </div>
     </div>
+
+    <!-- Container for toast notifications -->
+    <div id="toast-container"></div>
 
     <script src="script.js"></script>
 </body>
