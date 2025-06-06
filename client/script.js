@@ -39,21 +39,55 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Opening the modal window when clicking on the "Get Access" button
     getAccessBtn.addEventListener('click', function() {
+        // Reset scroll positions before showing the modal
+        resetModalScroll();
+
         modal.style.display = 'block';
         document.body.style.overflow = 'hidden'; // Preventing scrolling of the main page
     });
-    
+
+    function resetModalScroll() {
+        // Try to reset scroll on different elements that might have scrolling
+        const modalElements = [
+            document.querySelector('.modal'),
+            document.querySelector('.modal-content'),
+            document.querySelector('.modal-body'),
+            document.querySelector('.waitlist-form'),
+            document.querySelector('.questions')
+        ];
+        
+        modalElements.forEach(element => {
+            if (element) {
+                setTimeout(function () {
+                    element.scrollTo({ behavior: 'smooth', left: 0, top: 0, });
+                }, 2);
+            }
+        });
+    }
+
+    function closeModal() {
+        modal.style.display = 'none';
+        document.body.style.overflow = 'auto';
+        form.reset();
+
+        // Reset all selected options
+        document.querySelectorAll('.option-btn.selected').forEach(btn => {
+            btn.classList.remove('selected');
+        });
+        
+       // We also reset scroll when closing to prepare for next opening
+        setTimeout(resetModalScroll, 100);
+    };
+
     // Closing the modal window when clicking on the X button
     closeModalBtn.addEventListener('click', function() {
-        modal.style.display = 'none';
-        document.body.style.overflow = 'auto'; // Restoring scrolling of the main page
+        closeModal();
     });
-    
+
     // Closing the modal window when clicking outside its content
     window.addEventListener('click', function(event) {
         if (event.target == modal) {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto';
+            closeModal();
         }
     });
     
@@ -135,9 +169,9 @@ document.addEventListener('DOMContentLoaded', function() {
             if (result.success) {
                 // Showing success message
                 showToast('Thank you for joining the waitlist! We will contact you soon.', 'success');
-                form.reset();
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
+                
+                // Close modal
+                closeModal();
             } else {
                 showToast('Error: ' + (result.error || 'Failed to submit form'), 'error');
             }
